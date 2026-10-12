@@ -1,0 +1,29 @@
+# --- data ---------------------------------------------------------------- #
+# Everything under data/ is downloaded or rebuilt by `python -m src.pipeline`.
+data/raw/
+data/processed/
+data/derived/
+!data/.gitkeep
+
+# --- generated reports --------------------------------------------------- #
+reports/validation.parquet
+reports/research/*.parquet
+reports/figures/*.png
+
+# --- python -------------------------------------------------------------- #
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.ruff_cache/
+
+# --- os / editor --------------------------------------------------------- #
+.DS_Store
+.vscode/
+.idea/

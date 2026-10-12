@@ -1,0 +1,125 @@
+:root {
+  --fil-bg: #0E1319;
+  --fil-surface: #141A22;
+  --fil-panel: #1A212B;
+  --fil-panel-alt: #212A36;
+  --fil-line: #2B3644;
+  --fil-text: #EAF0F7;
+  --fil-text-2: #A9B6C6;
+  --fil-muted: #7A8798;
+  --fil-accent: #3987e5;
+  --fil-accent-2: #d95926;
+  --fil-accent-3: #c98500;
+}
+
+html, body, [data-testid="stAppViewContainer"] {
+  background: var(--fil-bg);
+  color: var(--fil-text);
+  font-family: Inter, "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stSidebar"] {
+  background: var(--fil-surface);
+  border-right: 1px solid var(--fil-line);
+}
+[data-testid="stSidebar"] * { color: var(--fil-text-2); }
+[data-testid="stSidebarNav"] a span { font-size: 0.92rem; }
+
+.block-container { padding-top: 2.2rem; padding-bottom: 3rem; max-width: 1500px; }
+
+/* ---------- headers ---------- */
+.fil-header { margin-bottom: 1.4rem; }
+.fil-header h1 {
+  font-size: 1.85rem; font-weight: 640; letter-spacing: -0.02em;
+  margin: 0.1rem 0 0.25rem 0; color: var(--fil-text);
+}
+.fil-header p { color: var(--fil-muted); font-size: 0.95rem; margin: 0; max-width: 78ch; }
+.fil-level {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--fil-accent);
+  border: 1px solid var(--fil-accent); border-radius: 3px;
+  padding: 2px 7px; margin-bottom: 0.5rem; opacity: 0.9;
+}
+
+.fil-section {
+  display: flex; align-items: baseline; gap: 0.8rem;
+  border-top: 1px solid var(--fil-line);
+  margin: 1.9rem 0 0.9rem 0; padding-top: 0.9rem;
+}
+.fil-section h3 {
+  font-size: 1.02rem; font-weight: 600; margin: 0; color: var(--fil-text);
+  letter-spacing: -0.01em;
+}
+.fil-section span { font-size: 0.83rem; color: var(--fil-muted); }
+
+/* ---------- metric tiles ---------- */
+.fil-metric {
+  background: var(--fil-panel); border: 1px solid var(--fil-line);
+  border-radius: 8px; padding: 0.75rem 0.9rem; height: 100%;
+}
+.fil-metric .label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--fil-muted); margin-bottom: 0.3rem;
+}
+.fil-metric .value {
+  font-size: 1.5rem; font-weight: 620; color: var(--fil-text);
+  line-height: 1.1; font-variant-numeric: tabular-nums;
+}
+.fil-metric .caption { font-size: 0.75rem; color: var(--fil-text-2); margin-top: 0.25rem; }
+
+/* ---------- notes ---------- */
+.fil-note {
+  border-left: 2px solid var(--fil-accent);
+  background: var(--fil-panel);
+  padding: 0.6rem 0.85rem; border-radius: 0 6px 6px 0;
+  font-size: 0.85rem; color: var(--fil-text-2); margin: 0.5rem 0 1rem 0;
+  line-height: 1.5;
+}
+.fil-note-caveat { border-left-color: var(--fil-accent-3); }
+.fil-note-warn { border-left-color: var(--fil-accent-2); }
+
+.fil-chip {
+  display: inline-block; border: 1px solid; border-radius: 999px;
+  padding: 1px 9px; font-size: 0.72rem; margin-right: 0.35rem;
+}
+
+.fil-empty {
+  border: 1px dashed var(--fil-line); border-radius: 8px;
+  padding: 2rem; text-align: center; color: var(--fil-muted); font-size: 0.9rem;
+}
+
+/* ---------- streamlit widgets ---------- */
+[data-testid="stMetricValue"] { font-size: 1.4rem; }
+.stTabs [data-baseweb="tab-list"] { gap: 4px; border-bottom: 1px solid var(--fil-line); }
+.stTabs [data-baseweb="tab"] {
+  background: transparent; border-radius: 6px 6px 0 0; padding: 6px 14px;
+  color: var(--fil-muted); font-size: 0.88rem;
+}
+.stTabs [aria-selected="true"] { background: var(--fil-panel); color: var(--fil-text); }
+
+[data-testid="stDataFrame"] { border: 1px solid var(--fil-line); border-radius: 8px; }
+div[data-baseweb="select"] > div, div[data-baseweb="input"] > div {
+  background: var(--fil-panel); border-color: var(--fil-line);
+}
+.stSlider [data-baseweb="slider"] div[role="slider"] { background: var(--fil-accent); }
+hr { border-color: var(--fil-line); }
+a { color: var(--fil-accent); }
+
+.fil-story {
+  display: grid; grid-template-columns: 42px 1fr; gap: 0.85rem;
+  padding: 0.6rem 0; border-bottom: 1px solid var(--fil-line);
+}
+.fil-story .lvl {
+  font-size: 0.72rem; color: var(--fil-accent); font-weight: 640;
+  border: 1px solid var(--fil-line); border-radius: 6px;
+  height: 30px; display: flex; align-items: center; justify-content: center;
+}
+.fil-story .q { font-weight: 600; font-size: 0.92rem; color: var(--fil-text); }
+.fil-story .a { font-size: 0.84rem; color: var(--fil-muted); }
+
+.fil-note code {
+  background: var(--fil-panel-alt); border-radius: 3px; padding: 1px 5px;
+  font-size: 0.82em; color: var(--fil-text);
+}
+.fil-note strong { color: var(--fil-text); font-weight: 620; }
